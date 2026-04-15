@@ -45,9 +45,11 @@ pipeline {
               
               steps {
                 sh '''
-                    npx install -g serve 
-                    node_modules\.bin\serve -s build
-                    npx playwright tes 
+                    np ci 
+                    npx playwright install --with-deps
+                    npx serve -s build & 
+                    sleep 5
+                    npx playwright test 
                    '''
               }
         }
