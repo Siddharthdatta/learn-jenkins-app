@@ -46,7 +46,6 @@ pipeline {
               steps {
                 sh '''
                     npm ci 
-                    npx playwright install --with-deps
                     npx serve -s build & 
                     sleep 5
                     npx playwright test || true
