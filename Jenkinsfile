@@ -85,7 +85,7 @@ pipeline {
                     reuseNode true
                  }
             }
-            steps 
+            steps {
                 sh '''
                 npm install netlify-cli
                 node_modules/.bin/netlify --version
@@ -95,9 +95,8 @@ pipeline {
                                         --dir=build \
                                         --prod \
                                         --build=false   
-                l
                 '''
-            
+            }
         }
     }
 }
